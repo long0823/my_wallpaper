@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>随机图片 API</title>
+    <title>随机图片 URL</title>
     <script>
         fetch("images.txt")
             .then(response => response.text())
             .then(data => {
-                const images = data.split("\n").filter(Boolean);
-                document.write(images[Math.floor(Math.random() * images.length)]);
-            });
+                const images = data.split("\n").filter(Boolean); // 读取并去掉空行
+                document.body.innerText = images[Math.floor(Math.random() * images.length)]; // 返回随机 URL
+            })
+            .catch(error => console.error("Error loading images:", error));
     </script>
 </head>
 <body>
