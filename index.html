@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>随机图片</title>
+    <title>随机图片 URL</title>
     <script>
         const images = [
 		"https://pic.superbed.cc/item/67aa5fc9fa9f77b4dcdc1f12.jpg",
@@ -44,9 +44,8 @@
 		"https://pic.superbed.cc/item/67aa5f6efa9f77b4dcdc199c.jpg",
 		"https://pic.superbed.cc/item/67aa5f6efa9f77b4dcdc19a5.jpg",
 		"https://pic.superbed.cc/item/67aa5f6efa9f77b4dcdc19ae.jpg"
-
         ];
-        window.location.href = images[Math.floor(Math.random() * images.length)];
+        document.write(images[Math.floor(Math.random() * images.length)]);
     </script>
 </head>
 <body>
