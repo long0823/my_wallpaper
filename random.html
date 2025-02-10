@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>随机图片 URL</title>
+    <title>随机图片</title>
     <script>
         fetch("images.txt")
             .then(response => response.text())
             .then(data => {
-                const images = data.split("\n").filter(Boolean); // 读取并去掉空行
-                document.body.innerText = images[Math.floor(Math.random() * images.length)]; // 返回随机 URL
+                const images = data.split("\n").filter(Boolean);
+                const randomImage = images[Math.floor(Math.random() * images.length)];
+                window.location.href = randomImage; // 直接跳转到图片 URL
             })
             .catch(error => console.error("Error loading images:", error));
     </script>
